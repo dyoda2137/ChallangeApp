@@ -6,7 +6,7 @@ namespace ChallangeApp.Tests
         public void WhenEmployee1CollectScore_ThenCorrectResult()
         {
             // arrange
-            Employee employee1 = new Employee("Adam","¯yniec",33);
+            Employee employee1 = new Employee("Adam","Zyniec",33);
             employee1.AddScore(5);
             employee1.AddScore(7);
             employee1.AddScore(-2);
@@ -38,7 +38,7 @@ namespace ChallangeApp.Tests
         public void WhenEmployee3CollectScore_ThenCorrectResult()
         {
             // arrange
-            Employee employee3 = new Employee("Mateusz", "Buga³a", 28);
+            Employee employee3 = new Employee("Mateusz", "Bugala", 28);
             employee3.AddScore(7);
             employee3.AddScore(-1);
             employee3.AddScore(6);
