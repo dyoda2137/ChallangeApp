@@ -44,6 +44,7 @@ namespace ChallangeApp.Tests
             employee3.AddScore(6);
 
             //act
+
             var result = employee3.Result;
 
             // assert
