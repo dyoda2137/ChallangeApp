@@ -1,46 +1,34 @@
 ﻿using ChallangeApp;
 
-Employee employee1 = new Employee("Tomasz", "Dziedzic", 24);
-Employee employee2 = new Employee("Anna", "Sowa", 29);
-Employee employee3 = new Employee("Piotr", "Kwarciak", 36);
+var employee = new Employee("Adam", "Zyniec");
+employee.AddGrade(69);
+employee.AddGrade(10);
+employee.AddGrade(1);
+employee.AddGrade(4);
+employee.AddGrade(42);
+employee.AddGrade(2.2);
 
-employee1.AddScore(7);
-employee1.AddScore(4);
-employee1.AddScore(9);
-employee1.AddScore(3);
-employee1.AddScore(5);
+var statistics1 = employee.GetStatisticsWithForeach();
+var statistics2 = employee.GetStatisticsWithFor();
+var statistics3 = employee.GetStatisticsWithDoWhile();
+var statistics4 = employee.GetStatisticsWithWhile();
 
-employee2.AddScore(6);
-employee2.AddScore(3);
-employee2.AddScore(6);
-employee2.AddScore(1);
-employee2.AddScore(2);
+Console.WriteLine("Statistics metod Foreach");
+Console.WriteLine($"Average: {statistics1.Average:N2}");
+Console.WriteLine($"Min: {statistics1.Min}");
+Console.WriteLine($"Max: {statistics1.Max}");
 
-employee3.AddScore(5);
-employee3.AddScore(6);
-employee3.AddScore(7);
-employee3.AddScore(4);
-employee3.AddScore(9);
+Console.WriteLine("Statistics metod For");
+Console.WriteLine($"Average: {statistics2.Average:N2}");
+Console.WriteLine($"Min: {statistics2.Min}");
+Console.WriteLine($"Max: {statistics2.Max}");
 
-List<Employee> employees = new List<Employee>()
-{ 
-    employee1, employee2, employee3
-};
+Console.WriteLine("Statistics metod Do While");
+Console.WriteLine($"Average: {statistics3.Average:N2}");
+Console.WriteLine($"Min: {statistics3.Min}");
+Console.WriteLine($"Max: {statistics3.Max}");
 
-int maxResult = -1;
-Employee employeeWithMaxResult = null;
-
-foreach (var employee in employees)
-{
-    if (employee.Result > maxResult)
-    { 
-        maxResult = employee.Result;
-        employeeWithMaxResult = employee;
-    }
-}
-
-Console.WriteLine("Najwięciej punktów zdobył pracownik");
-Console.WriteLine("Imię: " + employeeWithMaxResult.Name);
-Console.WriteLine("Nazwisko: " + employeeWithMaxResult.Surname);
-Console.WriteLine("Wiek: " + employeeWithMaxResult.Age);
-Console.WriteLine("Wynik: " + employeeWithMaxResult.Result);
+Console.WriteLine("Statistics metod While");
+Console.WriteLine($"Average: {statistics4.Average:N2}");
+Console.WriteLine($"Min: {statistics4.Min}");
+Console.WriteLine($"Max: {statistics4.Max}");
