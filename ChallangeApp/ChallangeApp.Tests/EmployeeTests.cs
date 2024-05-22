@@ -3,52 +3,91 @@ namespace ChallangeApp.Tests
     public class TestEmployee
     {
         private Statistics statistics;
-        [Test]
-        public void WhenEmployeeCollectGrades_ShouldReturnAvverageGrade()
-        {
-            // arrange
-            Employee employee = new Employee("Adam", "Zyniec");
-            employee.AddGrade(5);
-            employee.AddGrade(7);
-            employee.AddGrade(3);
 
-            //act
+        [Test]
+        public void StatisticsCharLetterA()
+        {
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(80);
+
             var statistics = employee.GetStatistics();
-           
-            // assert
-            Assert.AreEqual(5.00, statistics.Average);
+
+            Assert.AreEqual('A', statistics.AverageLetter);
         }
 
         [Test]
-        public void WhenEmployee2CollectScore_ThenCorrectResult()
+        public void StatisticsCharLetterB()
         {
-            // arrange
-            Employee employee = new Employee("Adam", "Zyniec");
-            employee.AddGrade(5);
-            employee.AddGrade(7);
-            employee.AddGrade(2);
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(60);
 
-            //act
             var statistics = employee.GetStatistics();
-         
-            // assert
-            Assert.AreEqual(7, statistics.Max);
+
+            Assert.AreEqual('B', statistics.AverageLetter);
         }
 
         [Test]
-        public void WhenEmployee3CollectScore_ThenCorrectResult()
+        public void StatisticsCharLetterC()
         {
-            // arrange
-            Employee employee = new Employee("Adam", "Zyniec");
-            employee.AddGrade(5);
-            employee.AddGrade(7);
-            employee.AddGrade(2);
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(40);
 
-            //act
             var statistics = employee.GetStatistics();
-        
-            // assert
-            Assert.AreEqual(2, statistics.Min);
+
+            Assert.AreEqual('C', statistics.AverageLetter);
+        }
+
+        [Test]
+        public void StatisticsAverageChar()
+        {
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade("a");
+            employee.AddGrade("b");
+            employee.AddGrade("C");
+
+            var statistics = employee.GetStatistics();
+            
+            Assert.AreEqual('A', statistics.AverageLetter);
+        }
+
+        [Test]
+
+        public void StatisticsAverageValue()
+        {
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(20);
+            employee.AddGrade(90);
+            employee.AddGrade(40);
+
+            var statistics = employee.GetStatistics();
+
+            Assert.AreEqual(50, statistics.Average);
+        }
+
+        [Test]
+        public void StatisticsCorrectResultMaxValue()
+        {
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(20);
+            employee.AddGrade(70);
+            employee.AddGrade(50);
+
+            var statistics = employee.GetStatistics();
+
+            Assert.AreEqual(70, statistics.Max);
+        }
+
+        [Test]
+        public void StatisticsCorrectResultMinValue()
+        {
+            var employee = new Employee("Adam", "Zyniec");
+            employee.AddGrade(50);
+            employee.AddGrade(70);
+            employee.AddGrade(20);
+
+            var statistics = employee.GetStatistics();
+
+            Assert.AreEqual(20, statistics.Min);
         }
     }
 }
