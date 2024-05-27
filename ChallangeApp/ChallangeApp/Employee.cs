@@ -24,11 +24,11 @@
             }
             else if (grade < 0)
             {
-                Console.WriteLine("Ocena nie może być mniejsza od 0");
+                throw new Exception("Ocena nie może być mniejsza od 0");
             }
             else if (grade > 100)
             {
-                Console.WriteLine("Ocena nie może być większa od 100");
+                throw new Exception("Ocena nie może być większa od 100");
             }
         }
 
@@ -56,13 +56,13 @@
             {
                 this.AddGrade(result);
             }
-            else if(char.TryParse(grade, out char charResult))
+            else if (char.TryParse(grade, out char charResult))
             {
                 this.AddGrade(charResult);
             }
             else
             {
-                Console.WriteLine($"Ocena: {grade} jest nieprawidłowa");
+                throw new Exception($"Ocena: {grade} jest nieprawidłowa");
             }
         }
 
@@ -89,6 +89,8 @@
                 case 'e':
                     this.grades.Add(20);
                     break;
+                default:
+                    throw new Exception("Zła litera");
             }
         }
 
