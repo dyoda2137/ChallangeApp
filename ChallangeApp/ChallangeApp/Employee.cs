@@ -4,6 +4,11 @@
     {
         private List<float> grades = new List<float>();
 
+        public Employee()
+            : this("no name", "no surname", "no gender",0)
+        {
+        }
+
         public Employee(string name, string surname, string genger, int age)
             : base(name, surname, genger, age)
         {
