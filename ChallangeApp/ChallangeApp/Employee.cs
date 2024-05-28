@@ -5,7 +5,7 @@
         private List<float> grades = new List<float>();
 
         public Employee()
-            : this("no name", "no surname", "no gender",0)
+            : this("no name", "no surname", "no gender", 0)
         {
         }
 
@@ -16,8 +16,6 @@
 
         public void AddGrade(float grade)
         {
-            int valueInInt = (int)grade;
-
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
