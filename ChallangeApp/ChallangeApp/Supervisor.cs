@@ -1,10 +1,10 @@
 ﻿namespace ChallangeApp
 {
-    public class Employee : IEmployee
+    public class Supervisor : IEmployee
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
+        public Supervisor(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
@@ -50,7 +50,63 @@
         {
             if (float.TryParse(grade, out float result))
             {
-                this.AddGrade(result);
+                switch (grade)
+                {
+                    case "6":
+                        AddGrade(100);
+                        break;
+                    case "5+":
+                    case "+5":
+                        AddGrade(85);
+                        break;
+                    case "5":
+                        AddGrade(80);
+                        break;
+                    case "5-":
+                    case "-5":
+                        AddGrade(75);
+                        break;
+                    case "4+":
+                    case "+4":
+                        AddGrade(65);
+                        break;
+                    case "4":
+                        AddGrade(60);
+                        break;
+                    case "4-":
+                    case "-4":
+                        AddGrade(55);
+                        break;
+                    case "3+":
+                    case "+3":
+                        AddGrade(45);
+                        break;
+                    case "3":
+                        AddGrade(40);
+                        break;
+                    case "3-":
+                    case "-3":
+                        AddGrade(35);
+                        break;
+                    case "2+":
+                    case "+2":
+                        AddGrade(25);
+                        break;
+                    case "2":
+                        AddGrade(20);
+                        break;
+                    case "2-":
+                    case "-2":
+                        AddGrade(15);
+                        break;
+                    case "1":
+                        AddGrade(0);
+                        break;
+                        default:
+                        {
+                            throw new Exception("Ocena musi być w przedziale między 6 a 1");
+                        }
+                }
             }
             else if (char.TryParse(grade, out char charResult))
             {
@@ -58,7 +114,7 @@
             }
             else
             {
-                throw new Exception($"Ocena: {grade} jest nieprawidłowa");
+                this.AddGrade(result);
             }
         }
 
