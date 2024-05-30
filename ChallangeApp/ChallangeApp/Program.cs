@@ -20,7 +20,7 @@ switch (position)
     case "p":
         {
             AddPerson("Pracownika", 1);
-            var employee = new Employee(name, surname);
+            var employee = new EmployeeInFile(name, surname);
             while (true)
             {
                 Console.WriteLine($"Podaj ocenę od 0 do 100 lub A do E dla Pracownika: {name} {surname} ");
