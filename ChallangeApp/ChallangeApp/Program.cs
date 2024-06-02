@@ -20,18 +20,21 @@ switch (position)
     case "p":
         {
             AddPerson("Pracownika", 1);
-            var employee = new EmployeeInFile(name, surname);
+            var employee = new EmployeeInMemory(name, surname);
+            employee.GradeAdded += EmployeeGradeAdded;
+
+            void EmployeeGradeAdded(object sender, EventArgs args)
+            {
+                Console.WriteLine("Dodano ocenę");
+            }
+
             while (true)
             {
                 Console.WriteLine($"Podaj ocenę od 0 do 100 lub A do E dla Pracownika: {name} {surname} ");
                 var input = Console.ReadLine();
-                if (input == "q")
+                if (input == "q" || input == "Q")
                 {
                     break;
-                }
-                else if (input == "Q")
-                {
-                    break ;
                 }
                 try
                 {
@@ -56,11 +59,19 @@ switch (position)
         {
             AddPerson("Kierownika", 2);
             var supervisor = new Supervisor(name, surname);
+            supervisor.GradeAdded += EmployeeGradeAdded;
+
+            void EmployeeGradeAdded(object sender, EventArgs args)
+            {
+                Console.WriteLine("Dodano ocenę");
+            }
+
             while (true)
             {
                 Console.WriteLine($"Podaj ocenę od 1 do 6 lub A do E dla Kierownika:  {name} {surname}  ");
                 var input = Console.ReadLine();
-                if (input == "q")
+                            
+                if (input == "q" || input == "Q")
                 {
                     break;
                 }
@@ -84,6 +95,11 @@ switch (position)
         break;
 }
 
+void Employee_GradeAdded(object sender, EventArgs args)
+{
+    throw new NotImplementedException();
+}
+
 void AddPerson(string personType, int idPerson)
 {
     switch (idPerson)
@@ -96,7 +112,7 @@ void AddPerson(string personType, int idPerson)
                 surname = Console.ReadLine();
             }
             break;
-            case 2:
+        case 2:
             {
                 Console.WriteLine($"Podaj imię {personType} :");
                 name = Console.ReadLine();
