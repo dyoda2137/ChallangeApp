@@ -3,9 +3,11 @@
 string name = "", surname = "";
 
 Console.WriteLine("===========================================================");
-Console.WriteLine("|| Witaj w Programie do oceny Kierowników i Pracowników  ||");
+Console.WriteLine("||         Witaj w Programie do oceny  Pracowników       ||");
+//Console.WriteLine("|| Witaj w Programie do oceny Kierowników i Pracowników  ||");
 Console.WriteLine("===========================================================");
-Console.WriteLine("||Dodaj pracownika (P), kierownika (K), (Q) aby zakończyć||");
+Console.WriteLine("||      Dodaj pracownika (P),   aby zankonćzyć (Q)       ||");
+//Console.WriteLine("||Dodaj pracownika (P), kierownika (K), (Q) aby zakończyć||");
 
 var position = Console.ReadLine();
 
@@ -54,7 +56,7 @@ switch (position)
             Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
         }
         break;
-    case "K":
+  /*  case "K":
     case "k":
         {
             AddPerson("Kierownika", 2);
@@ -92,7 +94,7 @@ switch (position)
             Console.WriteLine($"Najniższa ocena: {statistics.Min}");
             Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
         }
-        break;
+        break;*/
 }
 
 void Employee_GradeAdded(object sender, EventArgs args)
