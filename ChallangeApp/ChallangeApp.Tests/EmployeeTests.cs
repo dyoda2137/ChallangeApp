@@ -7,7 +7,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsCharLetterA()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(80);
 
             var statistics = employee.GetStatistics();
@@ -18,7 +18,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsCharLetterB()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(60);
 
             var statistics = employee.GetStatistics();
@@ -29,7 +29,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsCharLetterC()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(40);
 
             var statistics = employee.GetStatistics();
@@ -40,7 +40,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsAverageChar()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade("a");
             employee.AddGrade("b");
             employee.AddGrade("C");
@@ -54,7 +54,7 @@ namespace ChallangeApp.Tests
 
         public void StatisticsAverageValue()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(20);
             employee.AddGrade(90);
             employee.AddGrade(40);
@@ -67,7 +67,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsCorrectResultMaxValue()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(20);
             employee.AddGrade(70);
             employee.AddGrade(50);
@@ -80,7 +80,7 @@ namespace ChallangeApp.Tests
         [Test]
         public void StatisticsCorrectResultMinValue()
         {
-            var employee = new Employee("Adam", "Zyniec");
+            var employee = new EmployeeInMemory("Adam", "Zyniec");
             employee.AddGrade(50);
             employee.AddGrade(70);
             employee.AddGrade(20);
